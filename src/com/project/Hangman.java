@@ -1,6 +1,6 @@
 package com.project;
 
-public class Main {
+public class Hangman {
 
     public static void main(String[] args) {
 	// write your code here
