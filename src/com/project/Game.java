@@ -59,4 +59,12 @@ public class Game {
         }
         return progress;
     }
+
+    public boolean isWon(){
+        return getCurrentProgress().indexOf('-') == -1;
+    }
+
+    public String getAnswer(){
+        return answer;
+    }
 }
