@@ -12,7 +12,7 @@ public class Game {
         misses="";
     }
 
-//    normalize to validiate
+//    normalize to validate the input
     private char normalizedGuess(char letter){
         if(! Character.isLetter(letter)){
             throw new IllegalArgumentException("A letter is required");
@@ -22,6 +22,14 @@ public class Game {
             throw new IllegalArgumentException(letter + " has already been guessed");
         }
         return letter;
+    }
+
+    public boolean applyGuess(String letters){
+        if(letters.length() == 0){
+            throw new IllegalArgumentException("No letter found");
+        }
+        return applyGuess(letters.charAt(0));
+
     }
 
     public boolean applyGuess(char letter){
