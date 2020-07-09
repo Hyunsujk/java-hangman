@@ -1,6 +1,7 @@
 package com.project;
 
 public class Game {
+    public static final int MAX_MISSES = 7;
     private String answer;
     private String hits;
     private String misses;
@@ -21,8 +22,13 @@ public class Game {
         return isHit;
     }
 
+    public int getRemainingTries(){
+        return MAX_MISSES - misses.length();
+    }
+
     public String getCurrentProgress(){
         String progress ="";
+//        for each loop to compare each letter of the answer with hits
         for (char letter : answer.toCharArray()){
             char display = '-';
             if (hits.indexOf(letter) != -1) {
